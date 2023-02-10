@@ -1,6 +1,23 @@
 window.config = {
   routerBasename: '/',
-  // whiteLabelling: {},
+   whiteLabeling: { // 自定义系统Logo
+    createLogoComponentFn: function (React) {
+      return React.createElement('a', {
+        target: '_self',
+        rel: 'noopener noreferrer',
+        className: 'header-brand',
+        href: '/',
+        style: {
+          display: 'block',
+          textIndent: '-9999px',
+          background: 'url(../assets/Kp_Logo.png)',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          width: '49px',
+        },
+      }, "Kp_Logo");
+    },
+  },
   extensions: [],
   modes: [],
   customizationService: {
